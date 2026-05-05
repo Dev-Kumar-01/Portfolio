@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Kumar | Android Developer</title>
+    <meta name="description" content="Portfolio of Dev Kumar, an Android Developer crafting elegant and scalable mobile solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <div id="custom-cursor" class="desktop-only"></div>
+    <div id="cursor-ring" class="desktop-only"></div>
+    
+    <div id="loading-screen">
+        <div class="logo-box">Welcome!!</div>
+    </div>
+
+    <!-- Background Circles for Parallax -->
+    <div class="bg-circles">
+        <div class="circle violet-circle" data-speed="0.04"></div>
+        <div class="circle cyan-circle" data-speed="0.02"></div>
+        <div class="circle indigo-circle" data-speed="0.06"></div>
+    </div>
+
+    <nav>
+        <div class="nav-container fade-in-up">
+            <div class="logo-wrapper">
+                <div class="logo-box"> Dev </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="menu-btn mobile-only" aria-label="Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Drawer -->
+        <div class="mobile-drawer">
+            <div class="drawer-header">
+                <div class="logo-box">Dev Kumar</div>
+                <button class="close-btn"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="drawer-links">
+                <a href="#hero" class="drawer-link">Home</a>
+                <a href="#about" class="drawer-link">About</a>
+                <a href="#skills" class="drawer-link">Skills</a>
+                <a href="#projects" class="drawer-link">Projects</a>
+                <a href="#experience" class="drawer-link">Experience</a>
+                <a href="#contact" class="drawer-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="section">
+        <div class="hero-content">
+            <div class="badge fade-anim" style="--delay: 0ms">
+                <span>Available for Internships & Full-time Roles</span>
+            </div>
+            <h1 class="fade-anim" style="--delay: 150ms">
+                Hi, I'm <span class="gradient-text">Dev Kumar</span>
+            </h1>
+            <div class="typewriter-line fade-anim" style="--delay: 300ms">
+                <span>Architecting </span><span id="typewriter-text" class="gradient-text"></span><span class="cursor">|</span>
+            </div>
+            <p class="bio fade-anim" style="--delay: 450ms">
+                3rd-year Computer Science and Engineering undergraduate passionate about crafting digital legacy and elegant Android solutions. I love turning complex logic into scalable, user-centric mobile applications.
+            </p>
+            <div class="cta-row fade-anim" style="--delay: 600ms">
+                <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                <a href="#resume" class="btn btn-outline"><span class="inner-text">Download Resume</span></a>
+            </div>
+            <div class="social-row fade-anim" style="--delay: 750ms">
+                <a href="https://github.com/Dev-Kumar-01" target="_blank" class="social-icon"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/dev-kumar-44aa66289/" target="_blank" class="social-icon"><i class="ph ph-linkedin-logo"></i></a>
+                <a href="https://x.com/DevKr0220" target="_blank" class="social-icon"><i class="ph ph-twitter-logo"></i></a>
+                <a href="mailto:dev473740@gmail.com" class="social-icon"><i class="ph ph-envelope-simple"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="dot"></div>
+            </div>
+            <span>Scroll to discover</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section padding-y">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="label">ABOUT ME</span>
+                    <h2><span class="gradient-text">A little</span> about me</h2>
+                    <div class="divider"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-img-col scroll-reveal">
+                        <div class="img-frame tilt-card">
+                            <div class="grid-pattern"></div>
+                            <div class="photo">
+                                <img src="assets/profilepic.jpg" alt="Dev Kumar profile picture">
+                            </div>
+                            <div class="floating-badge">
+                                <span>Open to Work <span class="green-dot"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text-col scroll-reveal" style="transition-delay: 100ms;">
+                        <p>I am a 3rd-year B.Tech Computer Science and Engineering undergraduate at KIET Group of Institutions, expecting to graduate in May 2027. My utmost passion lies in robust Android development, seamlessly blending intuitive UI designs with sound, scalable engineering architectures.</p>
+                        <p>My technical journey evolved from building rudimentary interfaces to architecting complete, scalable mobile ecosystem platforms—including digital asset management and food delivery infrastructures. When I am not immersed in Android Studio, I am either leading tech communities or strategizing in competitive hackathons.</p>
+                        <div class="stats-grid">
+                            <div class="stat-card tilt-card">
+                                <div class="stat-num gradient-text">6+</div>
+                                <div class="stat-label">Production Apps built</div>
+                            </div>
+                            <div class="stat-card tilt-card">
+                                <div class="stat-num gradient-text">1684</div>
+                                <div class="stat-label">High Chess Rating</div>
+                            </div>
+                            <div class="stat-card tilt-card">
+                                <div class="stat-num gradient-text">100</div>
+                                <div class="stat-label">Top 100 Graphethon 3.0</div>
+                            </div>
+                            <div class="stat-card tilt-card">
+                                <div class="stat-num gradient-text">3+</div>
+                                <div class="stat-label">Leadership Roles</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section padding-y surface-bg">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="label">TECH STACK</span>
+                    <h2><span class="gradient-text">Tools</span> & Technologies</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="tabs-container scroll-reveal">
+                    <button class="tab-btn active" data-tab="languages">Languages</button>
+                    <button class="tab-btn" data-tab="android">Android Development</button>
+                    <button class="tab-btn" data-tab="tools">Tools</button>
+                    <button class="tab-btn" data-tab="frameworks">Frameworks & Libraries</button>
+                </div>
+
+                <div class="skills-grid-wrapper scroll-reveal">
+                    <!-- Languages -->
+                    <div class="skills-grid active" id="tab-languages">
+                        <div class="skill-card"><i class="ph ph-coffee"></i><span>Java</span></div>
+                        <div class="skill-card"><i class="ph ph-atom"></i><span>Kotlin</span></div>
+                        <div class="skill-card"><i class="ph ph-file-py"></i><span>Python</span></div>
+                        <div class="skill-card"><i class="ph ph-file-c"></i><span>C</span></div>
+                        <div class="skill-card"><i class="ph ph-database"></i><span>SQL</span></div>
+                    </div>
+                    <!-- Android Dev -->
+                    <div class="skills-grid hidden" id="tab-android">
+                        <div class="skill-card"><i class="ph ph-android-logo"></i><span>Jetpack Compose</span></div>
+                        <div class="skill-card"><i class="ph ph-file-code"></i><span>XML</span></div>
+                        <div class="skill-card"><i class="ph ph-tree-structure"></i><span>MVVM Architecture</span></div>
+                        <div class="skill-card"><i class="ph ph-database"></i><span>Room Database</span></div>
+                        <div class="skill-card"><i class="ph ph-activity"></i><span>LiveData</span></div>
+                        <div class="skill-card"><i class="ph ph-brain"></i><span>ViewModel</span></div>
+                        <div class="skill-card"><i class="ph ph-arrows-left-right"></i><span>Coroutines</span></div>
+                        <div class="skill-card"><i class="ph ph-plugs-connected"></i><span>Retrofit</span></div>
+                        <div class="skill-card"><i class="ph ph-palette"></i><span>Material Design</span></div>
+                        <div class="skill-card"><i class="ph ph-puzzle-piece"></i><span>Fragments</span></div>
+                        <div class="skill-card"><i class="ph ph-map-trifold"></i><span>Navigation Component</span></div>
+                        <div class="skill-card"><i class="ph ph-link"></i><span>Data Binding</span></div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="skills-grid hidden" id="tab-tools">
+                        <div class="skill-card"><i class="ph ph-android-logo"></i><span>Android Studio</span></div>
+                        <div class="skill-card"><i class="ph ph-git-branch"></i><span>Git/GitHub</span></div>
+                        <div class="skill-card"><i class="ph ph-fire"></i><span>Firebase</span></div>
+                        <div class="skill-card"><i class="ph ph-database"></i><span>Supabase</span></div>
+                        <div class="skill-card"><i class="ph ph-terminal"></i><span>Linux</span></div>
+                        <div class="skill-card"><i class="ph ph-code"></i><span>VS Code</span></div>
+                        <div class="skill-card"><i class="ph ph-app-window"></i><span>IntelliJ</span></div>
+                    </div>
+                    <!-- Frameworks -->
+                    <div class="skills-grid hidden" id="tab-frameworks">
+                        <div class="skill-card"><i class="ph ph-leaf"></i><span>Spring Boot</span></div>
+                        <div class="skill-card"><i class="ph ph-leaf"></i><span>Spring Framework</span></div>
+                        <div class="skill-card"><i class="ph ph-plugs-connected"></i><span>REST APIs</span></div>
+                        <div class="skill-card"><i class="ph ph-brackets-curly"></i><span>JSON</span></div>
+                        <div class="skill-card"><i class="ph ph-image"></i><span>Glide</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section padding-y">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="label">PROJECTS</span>
+                    <h2><span class="gradient-text">Some Things</span> I've Built</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="featured-projects">
+                    <!-- Project 1 -->
+                    <div class="featured-card proj-left scroll-reveal tilt-card">
+                        <div class="fc-img-col slide-in-left">
+                            <div class="fc-img-wrapper">
+                                <div class="fc-img-placeholder">The Final Transfer</div>
+                                <div class="bottom-gradient"></div>
+                            </div>
+                        </div>
+                        <div class="fc-text-col fade-in-right">
+                            <span class="fc-tag">Featured Project</span>
+                            <h3 class="fc-title">The Final Transfer</h3>
+                            <p class="fc-desc">A highly secure digital legacy management Android app integrating biometric authentication, real-time inactivity heartbeat monitoring, and an automated nominee notification system via Firebase.</p>
+                            <div class="fc-tech">
+                                <span>Kotlin</span><span>Jetpack Compose</span><span>Firebase</span><span>MVVM</span>
+                            </div>
+                            <div class="fc-links">
+                                <a href="https://github.com/Dev-Kumar-01" target="_blank" class="icon-btn"><i class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="featured-card proj-right scroll-reveal tilt-card">
+                        <div class="fc-text-col fade-in-left">
+                            <span class="fc-tag">Featured Project</span>
+                            <h3 class="fc-title">DishDash</h3>
+                            <p class="fc-desc">Architected a dual-interface food ordering system for both users and administrators. Features live order tracking and instant push notifications via Firebase Cloud Messaging.</p>
+                            <div class="fc-tech">
+                                <span>Kotlin</span><span>XML</span><span>Firebase</span><span>Retrofit</span>
+                            </div>
+                            <div class="fc-links">
+                                <a href="https://github.com/Dev-Kumar-01" target="_blank" class="icon-btn"><i class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+                        <div class="fc-img-col slide-in-right">
+                            <div class="fc-img-wrapper">
+                                <div class="fc-img-placeholder">DishDash App</div>
+                                <div class="bottom-gradient"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="featured-card proj-left scroll-reveal tilt-card">
+                        <div class="fc-img-col slide-in-left">
+                            <div class="fc-img-wrapper">
+                                <div class="fc-img-placeholder">Park-Kar</div>
+                                <div class="bottom-gradient"></div>
+                            </div>
+                        </div>
+                        <div class="fc-text-col fade-in-right">
+                            <span class="fc-tag">Featured Project</span>
+                            <h3 class="fc-title">Park-Kar Solution</h3>
+                            <p class="fc-desc">A smart parking utility solving urban logistics. Offers instant booking of trusted parking spaces and effortless spot management for providers, ensuring reliable matching.</p>
+                            <div class="fc-tech">
+                                <span>Kotlin</span><span>XML</span><span>Google Maps API</span><span>Firebase</span>
+                            </div>
+                            <div class="fc-links">
+                                <a href="https://github.com/Dev-Kumar-01" target="_blank" class="icon-btn"><i class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="other-projects">
+                    <h3 class="op-heading scroll-reveal">Other Noteworthy Projects</h3>
+                    <div class="op-grid scroll-reveal">
+                        <!-- Tiny Proj 1 -->
+                        <div class="op-card tilt-card">
+                            <div class="op-top">
+                                <i class="ph ph-folder op-folder"></i>
+                                <div class="op-links">
+                                    <a href="https://github.com/Dev-Kumar-01" target="_blank"><i class="ph ph-github-logo"></i></a>
+                                </div>
+                            </div>
+                            <h4 class="op-title">Music Player App</h4>
+                            <p class="op-desc">A premium local music playing interface leveraging Coroutines for background audio streaming and seamless UI states.</p>
+                            <div class="op-tech"><span>Kotlin</span><span>Room DB</span></div>
+                        </div>
+                        <!-- Tiny Proj 2 -->
+                        <div class="op-card tilt-card">
+                            <div class="op-top">
+                                <i class="ph ph-folder op-folder"></i>
+                                <div class="op-links">
+                                    <a href="https://github.com/Dev-Kumar-01" target="_blank"><i class="ph ph-github-logo"></i></a>
+                                </div>
+                            </div>
+                            <h4 class="op-title">WhatsApp Clone</h4>
+                            <p class="op-desc">A Jetpack Compose powered clone of the globally renowned messaging application architecture.</p>
+                            <div class="op-tech"><span>Jetpack Compose</span><span>Kotlin</span></div>
+                        </div>
+                        <!-- Tiny Proj 3 -->
+                        <div class="op-card tilt-card">
+                            <div class="op-top">
+                                <i class="ph ph-folder op-folder"></i>
+                                <div class="op-links">
+                                    <a href="https://github.com/Dev-Kumar-01" target="_blank"><i class="ph ph-github-logo"></i></a>
+                                </div>
+                            </div>
+                            <h4 class="op-title">Expense Tracker</h4>
+                            <p class="op-desc">A robust utility app delivering real-time insights into financial habits utilizing local Room database storage.</p>
+                            <div class="op-tech"><span>Kotlin</span><span>XML</span><span>Room</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section padding-y">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="label">EXPERIENCE</span>
+                    <h2><span class="gradient-text">Roles</span> & Education</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="timeline scroll-reveal">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="tl-item tl-left scroll-reveal">
+                        <div class="tl-dot"></div>
+                        <div class="tl-card tilt-card">
+                            <div class="tl-header">
+                                <i class="ph ph-apple-logo"></i>
+                                <span class="tl-date">Present</span>
+                            </div>
+                            <h3 class="tl-title">Vice President</h3>
+                            <h4 class="tl-subtitle gradient-text">Apple COE</h4>
+                            <ul class="tl-list">
+                                <li>Spearheaded vast technical events engaging over 1,000+ total participants.</li>
+                                <li>Leading strategic initiatives and nurturing technical growth among peers.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tl-item tl-right scroll-reveal">
+                        <div class="tl-dot"></div>
+                        <div class="tl-card tilt-card">
+                            <div class="tl-header">
+                                <i class="ph ph-graduation-cap"></i>
+                                <span class="tl-date">Oct 2023 - May 2027</span>
+                            </div>
+                            <h3 class="tl-title">B.Tech in Computer Science</h3>
+                            <h4 class="tl-subtitle gradient-text">KIET Group of Institutions (AKTU)</h4>
+                            <ul class="tl-list">
+                                <li>Current Academic Standing: 81.23%</li>
+                                <li>Located in Ghaziabad, India.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tl-item tl-left scroll-reveal">
+                        <div class="tl-dot"></div>
+                        <div class="tl-card tilt-card">
+                            <div class="tl-header">
+                                <i class="ph ph-microsoft-logo"></i>
+                                <span class="tl-date">Present</span>
+                            </div>
+                            <h3 class="tl-title">Android Lead</h3>
+                            <h4 class="tl-subtitle gradient-text">Microsoft Learn Student Ambassador (MLSA)</h4>
+                            <ul class="tl-list">
+                                <li>Mentoring students in state-of-the-art Android technologies.</li>
+                                <li>Facilitating workshops transitioning members from XML to Jetpack Compose.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tl-item tl-right scroll-reveal">
+                        <div class="tl-dot"></div>
+                        <div class="tl-card tilt-card">
+                            <div class="tl-header">
+                                <i class="ph ph-google-logo"></i>
+                                <span class="tl-date">Present</span>
+                            </div>
+                            <h3 class="tl-title">Android Coordinator & Event Manager</h3>
+                            <h4 class="tl-subtitle gradient-text">Google Developer Group (GDG) on Campus</h4>
+                            <ul class="tl-list">
+                                <li>Organized and managed expansive coding events as a sponsor team lead.</li>
+                                <li>Synchronized core team operations ensuring optimal event delivery.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section padding-y">
+            <div class="container scroll-reveal">
+                <div class="cert-header">
+                    <h2 class="gradient-text">Certifications & Achievements</h2>
+                </div>
+
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <h4 class="cert-title">Google Solution Challenge Badge</h4>
+                        <p class="cert-meta">Google Developers</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="cert-title">Natural Language Processing</h4>
+                        <p class="cert-meta">Certification</p>
+                    </div>
+                    <div class="cert-card">
+                        <h4 class="cert-title">Data Science & AI</h4>
+                        <p class="cert-meta">Fundamental Certifications</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section padding-y">
+            <div class="contact-container scroll-reveal">
+                <div class="section-header">
+                    <span class="label">GET IN TOUCH</span>
+                    <h2><span class="gradient-text">Let's Connect</span></h2>
+                    <div class="divider"></div>
+                </div>
+                <p class="contact-desc">Whether you have an opportunity, a technical question, or just want to say hi — my inbox is permanently open.</p>
+
+                <!-- formsubmit.co Setup -->
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/dev473740@gmail.com" method="POST">
+                    <!-- Disable Captcha optionally -->
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
+                        <label for="name" class="form-label">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
+                        <label for="email" class="form-label">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
+                        <label for="message" class="form-label">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-submit" id="submitBtn">
+                        <span class="btn-text">Send Message 🚀</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                    <div id="successMsg" class="success-message hidden">✅ Message Sent Successfully!</div>
+                </form>
+
+                <div class="info-chips">
+                    <div class="ichip">📧 dev473740@gmail.com</div>
+                    <div class="ichip">📍 Ghaziabad, Uttar Pradesh, India</div>
+                    <div class="ichip">🕐 Responds rapidly</div>
+                </div>
+
+                <div class="contact-socials">
+                    <a href="https://github.com/Dev-Kumar-01" target="_blank" class="cs-icon"><i class="ph ph-github-logo"></i></a>
+                    <a href="https://www.linkedin.com/in/dev-kumar-44aa66289/" target="_blank" class="cs-icon"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="https://x.com/DevKr0220" target="_blank" class="cs-icon"><i class="ph ph-twitter-logo"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top-line"></div>
+        <div class="footer-container">
+            <div class="f-left">
+                © 2026 Dev Kumar. Architected with Elegance.
+            </div>
+            <div class="f-center">
+                <a href="https://github.com/Dev-Kumar-01" target="_blank" class="social-icon"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/dev-kumar-44aa66289/" target="_blank" class="social-icon"><i class="ph ph-linkedin-logo"></i></a>
+                <a href="https://x.com/DevKr0220" target="_blank" class="social-icon"><i class="ph ph-twitter-logo"></i></a>
+            </div>
+            <div class="f-right">
+                <!-- Removed BTT Button from here to make it fixed -->
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="btt-btn">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

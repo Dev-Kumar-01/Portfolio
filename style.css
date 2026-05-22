@@ -24,14 +24,42 @@ html[data-theme="dark"] {
 
 /* Light Mode */
 html[data-theme="light"] {
-  --bg-color: #F8F9FA;
+  --bg-color: #F1F5F9;
   --surface-color: #FFFFFF;
-  --text-primary: #111827;
-  --text-secondary: #4B5563;
-  --border-color: #E5E7EB;
-  --glow: rgba(124, 58, 237, 0.2);
-  --glow-hover: rgba(124, 58, 237, 0.35);
-  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --border-color: #E2E8F0;
+  --glow: rgba(124, 58, 237, 0.08);
+  --glow-hover: rgba(124, 58, 237, 0.16);
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(124, 58, 237, 0.02);
+}
+
+html[data-theme="light"] .stat-card,
+html[data-theme="light"] .skill-card,
+html[data-theme="light"] .op-card,
+html[data-theme="light"] .tl-card,
+html[data-theme="light"] .fc-desc,
+html[data-theme="light"] .cert-card,
+html[data-theme="light"] .icon-btn,
+html[data-theme="light"] .cs-icon,
+html[data-theme="light"] .ichip {
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 16px -6px rgba(124, 58, 237, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+html[data-theme="light"] .floating-badge {
+  background: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .circle {
+  opacity: 0.08;
+}
+
+html[data-theme="light"] .form-input:focus {
+  background: #FFFFFF;
 }
 
 * {
@@ -154,10 +182,17 @@ nav::after {
 .nav-link {
   text-decoration: none; color: var(--text-primary);
   font-size: 14px; font-weight: 500; transition: var(--transition);
+  position: relative; padding: 6px 0;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px;
+  background: var(--gradient); transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%; left: 0;
 }
 .nav-link:hover, .nav-link.active {
-  background: var(--gradient);
-  -webkit-background-clip: text; color: transparent;
+  color: var(--accent-secondary);
 }
 .nav-actions { display: flex; gap: 16px; align-items: center; }
 #theme-toggle {
@@ -227,7 +262,7 @@ nav::after {
 
 .social-row { display: flex; gap: 16px; }
 .social-icon { color: var(--text-secondary); font-size: 20px; transition: var(--transition); text-decoration: none; cursor: none;}
-.social-icon:hover { color: var(--accent-primary); transform: translateY(-2px); }
+.social-icon:hover { color: var(--accent-primary); transform: translateY(-3px) scale(1.1); }
 
 .scroll-indicator { position: absolute; bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0.7;}
 .mouse { width: 24px; height: 36px; border: 2px solid var(--text-secondary); border-radius: 12px; display: flex; justify-content: center; padding-top: 6px; }
@@ -256,11 +291,49 @@ nav::after {
 /* Skills */
 .surface-bg { background-color: var(--surface-color); }
 .tabs-container { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
-.tab-btn { background: var(--bg-color); color: var(--text-secondary); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 999px; font-family: var(--font-sans); font-size: 14px; cursor: none; transition: var(--transition); outline: none; }
+.tab-btn { background: var(--bg-color); color: var(--text-secondary); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 999px; font-family: var(--font-sans); font-size: 14px; cursor: none; transition: all var(--transition); outline: none; }
 .tab-btn.active { background: var(--gradient); color: white; border-color: transparent; }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; transition: opacity 0.2s ease, transform 0.2s ease; }
-.skills-grid.hidden { display: none; opacity: 0; transform: translateY(10px); }
-.skill-card { background: var(--bg-color); border-radius: 12px; height: 110px; padding: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; position: relative; transition: transform 0.1s ease-out, box-shadow var(--transition); border-bottom: 2px solid transparent; text-align: center;}
+.tab-btn:not(.active):hover { border-color: var(--accent-primary); color: var(--text-primary); transform: translateY(-2px); box-shadow: 0 4px 12px var(--glow); }
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 850px;
+  margin: 0 auto;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: auto;
+  overflow: visible;
+}
+.skills-grid.hidden {
+  opacity: 0;
+  transform: translateY(15px);
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 auto;
+  pointer-events: none;
+}
+.skill-card {
+  flex: 0 1 130px;
+  background: var(--bg-color);
+  border-radius: 12px;
+  height: 110px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  transition: transform 0.1s ease-out, box-shadow var(--transition);
+  border-bottom: 2px solid transparent;
+  text-align: center;
+}
 .skill-card::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--gradient); border-radius: 0 0 12px 12px; opacity: 1;}
 .skill-card i { font-size: 32px; color: var(--text-primary); }
 .skill-card span { font-size: 13px; font-weight: 500; line-height: 1.2;}
@@ -370,7 +443,7 @@ footer { padding: 40px 24px; background: var(--bg-color); position: relative; }
 .fade-anim { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease-out forwards; animation-delay: var(--delay); }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-.scroll-reveal { opacity: 0; transform: translateY(24px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
+.scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* Responsive Adjustments */

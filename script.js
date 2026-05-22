@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- Typewriter Effect --- */
     const typeText = document.getElementById('typewriter-text');
-    const words = ["web apps", "scalable backends", "beautiful UIs", "APIs"];
+    const words = ["Android apps", "scalable architectures", "beautiful UIs", "mobile experiences"];
     let wordIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
@@ -168,6 +168,20 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(renderRing);
     };
     renderRing();
+
+    // Hide/show custom cursor on mouse entering/leaving viewport
+    document.addEventListener('mouseleave', () => {
+        if (cursor && ring) {
+            cursor.style.opacity = '0';
+            ring.style.opacity = '0';
+        }
+    });
+    document.addEventListener('mouseenter', () => {
+        if (cursor && ring) {
+            cursor.style.opacity = '1';
+            ring.style.opacity = '1';
+        }
+    });
 
     // Hover Magnetizing
     const hoverables = document.querySelectorAll('a, button, .skill-card, .op-card');

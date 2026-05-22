@@ -73,12 +73,14 @@ body {
   #custom-cursor {
     width: 12px; height: 12px;
     background: var(--gradient);
-    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, opacity 0.3s ease;
+    opacity: 1;
   }
   #cursor-ring {
     width: 36px; height: 36px;
     border: 1px solid var(--accent-primary);
-    transition: width 0.2s ease, height 0.2s ease;
+    transition: width 0.2s ease, height 0.2s ease, opacity 0.3s ease;
+    opacity: 1;
   }
   body.cursor-hover #custom-cursor { transform: translate(-50%, -50%) scale(1.5); }
   body.cursor-hover #cursor-ring { width: 24px; height: 24px; }
@@ -269,9 +271,11 @@ nav::after {
 .featured-card { display: flex; align-items: center; gap: 40px; width: 100%; }
 .proj-right { flex-direction: row-reverse; }
 .fc-img-col { flex: 1; border-radius: 16px; overflow: hidden; position: relative; aspect-ratio: 16/9; background: var(--surface-color); }
-.fc-img-wrapper { width: 100%; height: 100%; position: relative; }
-.fc-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--border-color); font-size: 24px; font-weight: 600;}
-.bottom-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 30%; background: linear-gradient(to top, var(--bg-color), transparent); }
+.fc-img-wrapper { width: 100%; height: 100%; position: relative; overflow: hidden; }
+.fc-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform var(--transition-slow); display: block; }
+.featured-card:hover .fc-img { transform: scale(1.04); }
+.fc-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--border-color); font-size: 24px; font-weight: 600; background: var(--surface-color); }
+.bottom-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 30%; background: linear-gradient(to top, var(--bg-color), transparent); pointer-events: none; z-index: 1; }
 .fc-text-col { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .proj-left .fc-text-col { align-items: flex-start; text-align: left; }
 .proj-right .fc-text-col { align-items: flex-end; text-align: right; }
